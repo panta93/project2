@@ -26,7 +26,7 @@ class DB {
         } 
         $data = $q->fetchAll();
         return $data;
-        $this->pdo = null;//chiudiamo la connessione
+        $this->pdo = null;
     } 
    
     public function execute($sql) {
@@ -66,7 +66,7 @@ public function delete_one($tableName, $id) {
 
 public function mod($tableName, $columns = array(), $newValues, $id) {
 
-    $arrayKV = array_combine($columns,$newValues);//unisce 2 array numerici in 1 array kiave valore
+    $arrayKV = array_combine($columns,$newValues);
     foreach($arrayKV as $colName => $colValues) {
         if(!$colValues) {continue;}
         $this->stringColValue .= " $colName". " = '$colValues' ,";   
@@ -91,7 +91,7 @@ public function insert_one($tabella, $columns, $values) {
         
     $query = "INSERT INTO $tabella (" . implode(", ", $columns) . ") VALUES (" . $dataValues . ");";    
     
-    $this->pdo->query($query); //utilizziamo metodo query base, poichè avendo kustomizzato query(), nono ritornerebbe l'ultimo id
+    $this->pdo->query($query); 
     $lastId = $this->pdo->lastInsertId();
      
     return $lastId;
