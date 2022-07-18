@@ -1,0 +1,48 @@
+<!--
+ERRORS-ERRORS-ERRORS
+!!!FOREIGN KEY!!!
+non si può aggiungere un vincolo di chiave esterna se i risultati delle 
+colonne da unire non corrispondo al vincolo stesso!!!
+
+ERRORS-ERRORS-ERRORS
+!!!PHP<->SQL!!!
+quando eseguiamo una create o update, se abbiamo colonne impossibilitate dell'essere
+NULL, lo script non andrà a buon fine...
+-->
+
+<!--
+COME FARE-COME FARE
+eliminare dati multipli sql:
+DELETE FROM user WHERE id in(6,7)
+-->
+TABELLA PRODOTTO:
+id      Nome        quantita
+1      "Sedia"          2
+
+                    
+2      "Tavolo"         2
+
+
+TABELLA COLORE:
+id      Colore
+1      "Rosso"
+
+
+2      "Verde"
+
+
+id       idProdotto     idColore
+1            1              1
+
+2            1              2
+
+3            2              1
+
+4            2              2
+
+
+<!--
+    ALTER TABLE contatti ADD cellulare varchar(30); aggiungere colonna
+    ALTER TABLE  DROP ; rimuovere colonna
+    
+-->
